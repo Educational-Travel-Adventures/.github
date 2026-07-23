@@ -2,42 +2,33 @@
 
 We've specialized in operating customized educational tours, school trips & performance tours for students since 1991. So let us know where you want to go!
 
-This GitHub organization hosts the software that runs the business — booking, operations, finance, and the customer/guide-facing portals.
+This GitHub organization is home to the software that runs our business — tour booking, operations, and the portals our group leaders, travelers, and guides use.
 
 → Company site: https://etadventures.com · Contact: it@etadventures.com
 
 ## What we build
 
-**Tourbot** is the central custom ERP that sales, operations, accounting, and management use to run the business. It's a long-lived PHP / MySQL monorepo that also powers three outward-facing portals, all sharing the same database and integration services.
+**Tourbot** is our central platform: a custom system that sales, operations, accounting, and management use to run the business, plus outward-facing portals for the people we work with.
 
-The four surfaces served from the Tourbot monorepo:
-
-| Surface | Audience |
+| Portal | Audience |
 | --- | --- |
-| **mtourbot** | Internal staff (sales, ops, accounting, management) |
-| **customerweb** | Group leaders, parents & students |
-| **guides** | Tour-guide contractors |
-| **api** | REST API for internal services and the in-flight SPA |
+| **Manager app** | Internal staff (sales, operations, accounting, management) |
+| **Customer portal** | Group leaders, parents & students |
+| **Guide portal** | Tour-guide contractors |
+| **REST API** | Powers our web and mobile experiences |
+
+Alongside the core platform, we build internal tooling and automation to support our teams and travelers.
 
 ## Tech stack
 
-- **Core:** PHP 8 & MySQL 8
-- **API:** Slim 3 JSON REST API
-- **Architecture:** monorepo — modern PSR-4 / object-oriented code under `src/` and `neuron/`, alongside long-lived procedural code
-- **Runtime:** Apache web server; PM2 for long-running PHP daemons; ~50 scheduled cron jobs
-- **Auth:** Google OAuth (internal staff), group-code login (customers), email/password (guides)
-- **Integrations:** Twilio, Mandrill, Mailchimp, Pusher, and NMI / M&T for payments
+- **Core:** PHP & MySQL
+- **API:** JSON REST
+- **Also in the mix:** Python, Rust, and containerized services
+- **Practices:** CI-gated deploys, code review on every change, infrastructure-as-code
 
-## Repositories
+## Working with us
 
-The two repositories worked in day to day:
-
-- **`tourbot`** — the monorepo: the ERP, the REST API, the customer and guide portals, and most of ETA's web properties.
-- **`manager-tourbots`** — Docker Compose + config for the manager-sandbox containers.
-
-## Documentation
-
-Internal engineering documentation lives at https://docs.etadventures.com (access-restricted). It covers the company overview, infrastructure, the Tourbot application and API, and how code ships to production.
+Most of this organization's repositories are private. If you're an ETA team member or collaborator, reach out to it@etadventures.com for access and onboarding.
 
 ---
 
